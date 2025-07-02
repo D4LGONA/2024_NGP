@@ -5,8 +5,7 @@ bool IsLittleEndian()
 {
 	unsigned short data = 1;
 	auto data2 = htons(data);
-	if (data2 == data) return false;
-	else return true;
+	return data2 != data;
 }
 
 bool IsBidEndian()
@@ -17,7 +16,6 @@ bool IsBidEndian()
 int main()
 {
 	using namespace std;
-
 	if (IsLittleEndian())
 		cout << "Little Endian" << endl;
 	else
